@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="l1interpreter:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/l1interpreter_jar</output-path>
+    <root id="archive" name="l1interpreter.jar">
+      <element id="module-output" name="l1interpreter" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mariuszgromada/math/MathParser.org-mXparser/4.3.3/MathParser.org-mXparser-4.3.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/18.0.0/annotations-18.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/antlr/antlr4-runtime/4.7.1/antlr4-runtime-4.7.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
