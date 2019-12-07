@@ -1,8 +1,10 @@
 package Asm;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class InstructionData {
     private String type;
     private String param1;

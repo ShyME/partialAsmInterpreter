@@ -18,31 +18,18 @@ public class Interpreter {
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        while(scanner.hasNext()) {
+        while(scanner.hasNextLine()) {
             try {
                 String input = scanner.nextLine();
                 parser = new Parser(input);
 
-                String tokenString = parser.getTokenStreamString();
-                InstructionData instructionData = Parser.getInstructionData(tokenString);
-                //System.out.println(instructionData);
+                InstructionData instructionData = parser.buildData();
 
-                InstructionData evaluatedInstructionData = evaluateInstructionData(instructionData);
-                //System.out.println(evaluatedInstructionData);
-
-                Instruction instruction = InstructionCreator.create(evaluatedInstructionData);
+                Instruction instruction = InstructionCreator.create(instructionData);
                 instruction.execute();
             } catch(ParseCancellationException e) {
                 System.out.println(e.getMessage());
             }
         }
-    }
-
-    private InstructionData evaluateInstructionData(InstructionData instructionData) {
-        InstructionData evaluatedInstructionData = new InstructionData();
-        evaluatedInstructionData.setType(instructionData.getType());
-        evaluatedInstructionData.setParam1(processingUnit.evaluateRegisters(instructionData.getParam1()));
-        evaluatedInstructionData.setParam2(instructionData.getParam2());
-        return evaluatedInstructionData;
     }
 }

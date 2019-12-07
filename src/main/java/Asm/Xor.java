@@ -31,8 +31,6 @@ public class Xor implements Instruction {
             move.execute();
         } catch(IllegalStateException e) {
             System.out.println("Error");
-            //System.out.println(e.getMessage());
-            //e.printStackTrace();
         }
     }
 
@@ -46,8 +44,6 @@ public class Xor implements Instruction {
             param2 = b.trim();
         } catch(NumberFormatException e) {
             System.out.println("Error");
-            //System.out.println(e.getMessage());
-            //e.printStackTrace();
         }
     }
 }

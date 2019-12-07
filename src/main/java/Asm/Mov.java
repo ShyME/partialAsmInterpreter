@@ -23,8 +23,6 @@ public class Mov implements Instruction {
             processingUnit.moveToReg(param2, param1);
         } catch(IllegalStateException e) {
             System.out.println("Error");
-            //System.out.println(e.getMessage());
-            //e.printStackTrace();
         }
     }
 
@@ -37,8 +35,7 @@ public class Mov implements Instruction {
                 param1 = Integer.parseInt(a);
             param2 = b.trim();
         } catch(NumberFormatException e) {
-            System.out.println(e.getMessage());
-            //e.printStackTrace();
+            System.out.println("Error");
         }
     }
 }

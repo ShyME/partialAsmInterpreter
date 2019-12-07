@@ -1,14 +1,24 @@
 package CpuModel;
 
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class Register {
     private String name;
-    private Integer value;
+    private Integer value = null;
 
     public Register(String name) {
         this.name = name;
         this.value = null;
+    }
+
+    public Integer getValue() {
+        if(value == null)
+            throw new IllegalStateException("Register value is null!");
+        else return value;
+    }
+
+    public String getName() {
+        return name;
     }
 }

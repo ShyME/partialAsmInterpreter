@@ -28,8 +28,6 @@ public class Push implements Instruction {
                 this.param = Integer.parseInt(param);
         } catch (NumberFormatException e) {
             System.out.println("Error");
-            //System.out.println(e.getMessage());
-            //e.printStackTrace();
         }
     }
 }

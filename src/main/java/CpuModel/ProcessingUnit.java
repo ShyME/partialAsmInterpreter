@@ -46,19 +46,6 @@ public class ProcessingUnit {
         return registers.containsKey(regToken);
     }
 
-    public String evaluateRegisters(String expression) {
-        /*for(Map.Entry<String, Register> entry : registers.entrySet()) {
-            String value = entry.getValue().getValue() == null ? "????" : entry.getValue().getValue().toString();
-            result = expression.replaceAll(entry.getKey(), value);
-        }*/
-        for(int i = 0; i < registers.size(); i++) {
-            String key = (String) registers.keySet().toArray()[i];
-            String value = registers.get(key).getValue() == null ? "????" : registers.get(key).getValue().toString();
-            expression = expression.replaceAll(key, value);
-        }
-        return expression;
-    }
-
     private void initRegisters() {
         this.registers.put("%ebx", new Register("ebx"));
         this.registers.put("%ecx", new Register("ecx"));

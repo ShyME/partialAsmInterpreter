@@ -11,7 +11,7 @@ public class Int implements Instruction {
     }
 
     private boolean isValid() {
-        if(intCode.equals("0x80"))
+        if(!intCode.equals("0x80"))
             throw new IllegalArgumentException("Interruption parameter has to equal 0x80");
         return true;
     }
@@ -21,13 +21,11 @@ public class Int implements Instruction {
         try {
             if(isValid()) {
                 Integer stackValue = processingUnit.getAndRemoveStackValue();
-                String output = stackValue == null ? "????" : stackValue.toString();
+                String output = stackValue == null ? "???" : stackValue.toString();
                 System.out.println(output);
             }
         } catch(IllegalStateException | IllegalArgumentException e) {
             System.out.println("Error");
-            //System.out.println(e.getMessage());
-            //e.printStackTrace();
         }
     }
 
