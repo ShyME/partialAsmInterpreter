@@ -3,7 +3,7 @@
 The project demonstrates a couple of asm instructions in action, simple CPU model with few registers and a stack. Every possible action is showed in the example below. Antlr4 was used for arithmetic operation parsing.
 ## Example
 ```
-mov (4+6)*2, %edx							          //edx=20
+mov (4+6)*2, %edx                               //edx=20
 push %edx*2
 int 0x80                                        //output
 push %edx
@@ -11,7 +11,7 @@ push %ecx
 int 0x80                                        //output
 int 0x80                                        //output
 mov 4 - 1, %ecx                                 //ecx=3
-mov 4 - , %ecx								                  //error
+mov 4 - , %ecx                                  //error
 push %ecx				
 int 0x80                                        //output
 mov 24, %ecx                                    //ecx=24
