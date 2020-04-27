@@ -21,13 +21,15 @@ public class Interpreter {
         while(scanner.hasNextLine()) {
             try {
                 String input = scanner.nextLine();
+                if(input.equals("\n") || input.equals(""))
+                    continue;
                 parser = new Parser(input);
 
                 InstructionData instructionData = parser.buildData();
 
                 Instruction instruction = InstructionCreator.create(instructionData);
                 instruction.execute();
-            } catch(ParseCancellationException e) {
+            } catch(ParseCancellationException | IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }

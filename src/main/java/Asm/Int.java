@@ -1,7 +1,9 @@
 package Asm;
 
 import CpuModel.ProcessingUnit;
+import lombok.ToString;
 
+@ToString
 public class Int implements Instruction {
     private String intCode;
     private ProcessingUnit processingUnit;
@@ -31,10 +33,14 @@ public class Int implements Instruction {
 
     @Override
     public void setParams(String a, String b) {
+        if(b != null) //throw new IllegalArgumentException("Second argument of an INT instruction has to be null!");
+            throw new IllegalArgumentException("Error");
         setParam(a);
     }
 
     private void setParam(String param) {
+        if(param == null)
+            throw new IllegalArgumentException("Error");
         this.intCode = param.trim();
     }
 }

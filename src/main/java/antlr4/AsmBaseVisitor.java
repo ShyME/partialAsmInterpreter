@@ -1,4 +1,4 @@
-// Generated from D:/SQL/Sem_5/JFK/l1interpreter/src/main/antlr4\Asm.g4 by ANTLR 4.7.2
+// Generated from Asm.g4 by ANTLR 4.7.1
 package antlr4;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 

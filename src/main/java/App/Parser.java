@@ -25,7 +25,7 @@ public class Parser {
         try {
             result = asmVisitor.visit(tree);
         } catch(IllegalStateException e) {
-            result = null;
+            result = e.getMessage().substring(e.getMessage().indexOf("%"));
         }
         InstructionData instructionData = InstructionData.builder()
                 .type(asmVisitor.getInstruction())

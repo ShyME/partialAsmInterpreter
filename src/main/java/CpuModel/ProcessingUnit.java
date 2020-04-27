@@ -47,6 +47,7 @@ public class ProcessingUnit {
     }
 
     private void initRegisters() {
+        this.registers.put("%eax", new Register("eax"));
         this.registers.put("%ebx", new Register("ebx"));
         this.registers.put("%ecx", new Register("ecx"));
         this.registers.put("%edx", new Register("edx"));

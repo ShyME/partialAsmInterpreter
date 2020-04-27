@@ -1,4 +1,4 @@
-// Generated from D:/SQL/Sem_5/JFK/l1interpreter/src/main/antlr4\Asm.g4 by ANTLR 4.7.2
+// Generated from Asm.g4 by ANTLR 4.7.1
 package antlr4;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class AsmParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -22,28 +22,19 @@ public class AsmParser extends Parser {
 	public static final int
 		RULE_instruction = 0, RULE_targetParam = 1, RULE_argument = 2, RULE_addSubtractExpr = 3, 
 		RULE_multExpr = 4, RULE_minusExpr = 5, RULE_unaryArgument = 6, RULE_signedNumber = 7;
-	private static String[] makeRuleNames() {
-		return new String[] {
-			"instruction", "targetParam", "argument", "addSubtractExpr", "multExpr", 
-			"minusExpr", "unaryArgument", "signedNumber"
-		};
-	}
-	public static final String[] ruleNames = makeRuleNames();
+	public static final String[] ruleNames = {
+		"instruction", "targetParam", "argument", "addSubtractExpr", "multExpr", 
+		"minusExpr", "unaryArgument", "signedNumber"
+	};
 
-	private static String[] makeLiteralNames() {
-		return new String[] {
-			null, "','", "'('", "')'", null, null, null, null, null, "'+'", "'-'", 
-			"'*'"
-		};
-	}
-	private static final String[] _LITERAL_NAMES = makeLiteralNames();
-	private static String[] makeSymbolicNames() {
-		return new String[] {
-			null, null, null, null, "HEX_NUMBER", "WS", "NL", "INSTRUCTION_TYPE", 
-			"REGISTER", "PLUS", "MINUS", "TIMES", "NUMBER"
-		};
-	}
-	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
+	private static final String[] _LITERAL_NAMES = {
+		null, "','", "'('", "')'", null, null, null, null, null, "'+'", "'-'", 
+		"'*'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, null, null, null, "HEX_NUMBER", "WS", "NL", "INSTRUCTION_TYPE", 
+		"REGISTER", "PLUS", "MINUS", "TIMES", "NUMBER"
+	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
@@ -93,7 +84,6 @@ public class AsmParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
-
 	public static class InstructionContext extends ParserRuleContext {
 		public InstructionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -158,9 +148,9 @@ public class AsmParser extends Parser {
 		enterRule(_localctx, 0, RULE_instruction);
 		int _la;
 		try {
-			setState(34);
+			setState(26);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
 				_localctx = new DoubleArgumentInstructionContext(_localctx);
 				enterOuterAlt(_localctx, 1);
@@ -173,25 +163,15 @@ public class AsmParser extends Parser {
 				match(T__0);
 				setState(19);
 				targetParam();
-				setState(21);
-				_errHandler.sync(this);
+				setState(20);
 				_la = _input.LA(1);
-				if (_la==NL) {
-					{
-					setState(20);
-					match(NL);
-					}
+				if ( !(_la==EOF || _la==NL) ) {
+				_errHandler.recoverInline(this);
 				}
-
-				setState(24);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
-				case 1:
-					{
-					setState(23);
-					match(EOF);
-					}
-					break;
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
 				}
 				}
 				break;
@@ -199,29 +179,19 @@ public class AsmParser extends Parser {
 				_localctx = new SingleArgumentInstructionContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(26);
+				setState(22);
 				match(INSTRUCTION_TYPE);
-				setState(27);
+				setState(23);
 				argument();
-				setState(29);
-				_errHandler.sync(this);
+				setState(24);
 				_la = _input.LA(1);
-				if (_la==NL) {
-					{
-					setState(28);
-					match(NL);
-					}
+				if ( !(_la==EOF || _la==NL) ) {
+				_errHandler.recoverInline(this);
 				}
-
-				setState(32);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
-				case 1:
-					{
-					setState(31);
-					match(EOF);
-					}
-					break;
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
 				}
 				}
 				break;
@@ -265,7 +235,7 @@ public class AsmParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(36);
+			setState(28);
 			match(REGISTER);
 			}
 		}
@@ -332,7 +302,7 @@ public class AsmParser extends Parser {
 		ArgumentContext _localctx = new ArgumentContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_argument);
 		try {
-			setState(40);
+			setState(32);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__1:
@@ -342,7 +312,7 @@ public class AsmParser extends Parser {
 				_localctx = new ExpressionContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(38);
+				setState(30);
 				addSubtractExpr(0);
 				}
 				break;
@@ -350,7 +320,7 @@ public class AsmParser extends Parser {
 				_localctx = new HexNumbContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(39);
+				setState(31);
 				match(HEX_NUMBER);
 				}
 				break;
@@ -466,30 +436,30 @@ public class AsmParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(43);
+			setState(35);
 			multExpr(0);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(53);
+			setState(45);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(51);
+					setState(43);
 					_errHandler.sync(this);
-					switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+					switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 					case 1:
 						{
 						_localctx = new AdditionContext(new AddSubtractExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_addSubtractExpr);
-						setState(45);
+						setState(37);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(46);
+						setState(38);
 						match(PLUS);
-						setState(47);
+						setState(39);
 						multExpr(0);
 						}
 						break;
@@ -497,20 +467,20 @@ public class AsmParser extends Parser {
 						{
 						_localctx = new SubtractionContext(new AddSubtractExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_addSubtractExpr);
-						setState(48);
+						setState(40);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(49);
+						setState(41);
 						match(MINUS);
-						setState(50);
+						setState(42);
 						multExpr(0);
 						}
 						break;
 					}
 					} 
 				}
-				setState(55);
+				setState(47);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			}
 			}
 		}
@@ -599,13 +569,13 @@ public class AsmParser extends Parser {
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(57);
+			setState(49);
 			minusExpr();
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(64);
+			setState(56);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
@@ -614,18 +584,18 @@ public class AsmParser extends Parser {
 					{
 					_localctx = new MultiplicationContext(new MultExprContext(_parentctx, _parentState));
 					pushNewRecursionContext(_localctx, _startState, RULE_multExpr);
-					setState(59);
+					setState(51);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-					setState(60);
+					setState(52);
 					match(TIMES);
-					setState(61);
+					setState(53);
 					minusExpr();
 					}
 					} 
 				}
-				setState(66);
+				setState(58);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
 			}
 		}
@@ -695,16 +665,16 @@ public class AsmParser extends Parser {
 		MinusExprContext _localctx = new MinusExprContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_minusExpr);
 		try {
-			setState(70);
+			setState(62);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				_localctx = new SignChangeContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(67);
+				setState(59);
 				match(MINUS);
-				setState(68);
+				setState(60);
 				unaryArgument();
 				}
 				break;
@@ -712,7 +682,7 @@ public class AsmParser extends Parser {
 				_localctx = new ToSimpleArgumentContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(69);
+				setState(61);
 				unaryArgument();
 				}
 				break;
@@ -800,14 +770,14 @@ public class AsmParser extends Parser {
 		UnaryArgumentContext _localctx = new UnaryArgumentContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_unaryArgument);
 		try {
-			setState(78);
+			setState(70);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case REGISTER:
 				_localctx = new RegContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(72);
+				setState(64);
 				match(REGISTER);
 				}
 				break;
@@ -816,7 +786,7 @@ public class AsmParser extends Parser {
 				_localctx = new SignedNumbContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(73);
+				setState(65);
 				signedNumber();
 				}
 				break;
@@ -824,11 +794,11 @@ public class AsmParser extends Parser {
 				_localctx = new BracesContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(74);
+				setState(66);
 				match(T__1);
-				setState(75);
+				setState(67);
 				addSubtractExpr(0);
-				setState(76);
+				setState(68);
 				match(T__2);
 				}
 				break;
@@ -873,22 +843,22 @@ public class AsmParser extends Parser {
 		SignedNumberContext _localctx = new SignedNumberContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_signedNumber);
 		try {
-			setState(83);
+			setState(75);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NUMBER:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(80);
+				setState(72);
 				match(NUMBER);
 				}
 				break;
 			case MINUS:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(81);
+				setState(73);
 				match(MINUS);
-				setState(82);
+				setState(74);
 				match(NUMBER);
 				}
 				break;
@@ -934,28 +904,26 @@ public class AsmParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16X\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16P\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\3\2\3\2\3\2\3\2\3\2"+
-		"\5\2\30\n\2\3\2\5\2\33\n\2\3\2\3\2\3\2\5\2 \n\2\3\2\5\2#\n\2\5\2%\n\2"+
-		"\3\3\3\3\3\4\3\4\5\4+\n\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\7\5\66\n"+
-		"\5\f\5\16\59\13\5\3\6\3\6\3\6\3\6\3\6\3\6\7\6A\n\6\f\6\16\6D\13\6\3\7"+
-		"\3\7\3\7\5\7I\n\7\3\b\3\b\3\b\3\b\3\b\3\b\5\bQ\n\b\3\t\3\t\3\t\5\tV\n"+
-		"\t\3\t\2\4\b\n\n\2\4\6\b\n\f\16\20\2\2\2\\\2$\3\2\2\2\4&\3\2\2\2\6*\3"+
-		"\2\2\2\b,\3\2\2\2\n:\3\2\2\2\fH\3\2\2\2\16P\3\2\2\2\20U\3\2\2\2\22\23"+
-		"\7\t\2\2\23\24\5\6\4\2\24\25\7\3\2\2\25\27\5\4\3\2\26\30\7\b\2\2\27\26"+
-		"\3\2\2\2\27\30\3\2\2\2\30\32\3\2\2\2\31\33\7\2\2\3\32\31\3\2\2\2\32\33"+
-		"\3\2\2\2\33%\3\2\2\2\34\35\7\t\2\2\35\37\5\6\4\2\36 \7\b\2\2\37\36\3\2"+
-		"\2\2\37 \3\2\2\2 \"\3\2\2\2!#\7\2\2\3\"!\3\2\2\2\"#\3\2\2\2#%\3\2\2\2"+
-		"$\22\3\2\2\2$\34\3\2\2\2%\3\3\2\2\2&\'\7\n\2\2\'\5\3\2\2\2(+\5\b\5\2)"+
-		"+\7\6\2\2*(\3\2\2\2*)\3\2\2\2+\7\3\2\2\2,-\b\5\1\2-.\5\n\6\2.\67\3\2\2"+
-		"\2/\60\f\5\2\2\60\61\7\13\2\2\61\66\5\n\6\2\62\63\f\4\2\2\63\64\7\f\2"+
-		"\2\64\66\5\n\6\2\65/\3\2\2\2\65\62\3\2\2\2\669\3\2\2\2\67\65\3\2\2\2\67"+
-		"8\3\2\2\28\t\3\2\2\29\67\3\2\2\2:;\b\6\1\2;<\5\f\7\2<B\3\2\2\2=>\f\4\2"+
-		"\2>?\7\r\2\2?A\5\f\7\2@=\3\2\2\2AD\3\2\2\2B@\3\2\2\2BC\3\2\2\2C\13\3\2"+
-		"\2\2DB\3\2\2\2EF\7\f\2\2FI\5\16\b\2GI\5\16\b\2HE\3\2\2\2HG\3\2\2\2I\r"+
-		"\3\2\2\2JQ\7\n\2\2KQ\5\20\t\2LM\7\4\2\2MN\5\b\5\2NO\7\5\2\2OQ\3\2\2\2"+
-		"PJ\3\2\2\2PK\3\2\2\2PL\3\2\2\2Q\17\3\2\2\2RV\7\16\2\2ST\7\f\2\2TV\7\16"+
-		"\2\2UR\3\2\2\2US\3\2\2\2V\21\3\2\2\2\16\27\32\37\"$*\65\67BHPU";
+		"\3\2\3\2\3\2\3\2\3\2\5\2\35\n\2\3\3\3\3\3\4\3\4\5\4#\n\4\3\5\3\5\3\5\3"+
+		"\5\3\5\3\5\3\5\3\5\3\5\7\5.\n\5\f\5\16\5\61\13\5\3\6\3\6\3\6\3\6\3\6\3"+
+		"\6\7\69\n\6\f\6\16\6<\13\6\3\7\3\7\3\7\5\7A\n\7\3\b\3\b\3\b\3\b\3\b\3"+
+		"\b\5\bI\n\b\3\t\3\t\3\t\5\tN\n\t\3\t\2\4\b\n\n\2\4\6\b\n\f\16\20\2\3\3"+
+		"\3\b\b\2P\2\34\3\2\2\2\4\36\3\2\2\2\6\"\3\2\2\2\b$\3\2\2\2\n\62\3\2\2"+
+		"\2\f@\3\2\2\2\16H\3\2\2\2\20M\3\2\2\2\22\23\7\t\2\2\23\24\5\6\4\2\24\25"+
+		"\7\3\2\2\25\26\5\4\3\2\26\27\t\2\2\2\27\35\3\2\2\2\30\31\7\t\2\2\31\32"+
+		"\5\6\4\2\32\33\t\2\2\2\33\35\3\2\2\2\34\22\3\2\2\2\34\30\3\2\2\2\35\3"+
+		"\3\2\2\2\36\37\7\n\2\2\37\5\3\2\2\2 #\5\b\5\2!#\7\6\2\2\" \3\2\2\2\"!"+
+		"\3\2\2\2#\7\3\2\2\2$%\b\5\1\2%&\5\n\6\2&/\3\2\2\2\'(\f\5\2\2()\7\13\2"+
+		"\2).\5\n\6\2*+\f\4\2\2+,\7\f\2\2,.\5\n\6\2-\'\3\2\2\2-*\3\2\2\2.\61\3"+
+		"\2\2\2/-\3\2\2\2/\60\3\2\2\2\60\t\3\2\2\2\61/\3\2\2\2\62\63\b\6\1\2\63"+
+		"\64\5\f\7\2\64:\3\2\2\2\65\66\f\4\2\2\66\67\7\r\2\2\679\5\f\7\28\65\3"+
+		"\2\2\29<\3\2\2\2:8\3\2\2\2:;\3\2\2\2;\13\3\2\2\2<:\3\2\2\2=>\7\f\2\2>"+
+		"A\5\16\b\2?A\5\16\b\2@=\3\2\2\2@?\3\2\2\2A\r\3\2\2\2BI\7\n\2\2CI\5\20"+
+		"\t\2DE\7\4\2\2EF\5\b\5\2FG\7\5\2\2GI\3\2\2\2HB\3\2\2\2HC\3\2\2\2HD\3\2"+
+		"\2\2I\17\3\2\2\2JN\7\16\2\2KL\7\f\2\2LN\7\16\2\2MJ\3\2\2\2MK\3\2\2\2N"+
+		"\21\3\2\2\2\n\34\"-/:@HM";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

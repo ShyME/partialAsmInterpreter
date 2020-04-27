@@ -1,7 +1,9 @@
 package Asm;
 
 import CpuModel.ProcessingUnit;
+import lombok.ToString;
 
+@ToString
 public class Mov implements Instruction {
     private Integer param1;
     private String param2;
@@ -33,6 +35,8 @@ public class Mov implements Instruction {
                 param1 = null;
             else
                 param1 = Integer.parseInt(a);
+            if(b == null)
+                throw new IllegalArgumentException("Error");
             param2 = b.trim();
         } catch(NumberFormatException e) {
             System.out.println("Error");

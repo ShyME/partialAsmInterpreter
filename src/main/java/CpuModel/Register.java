@@ -14,7 +14,7 @@ public class Register {
 
     public Integer getValue() {
         if(value == null)
-            throw new IllegalStateException("Register value is null!");
+            throw new IllegalStateException("Register value is null! " + "%" + name);
         else return value;
     }
 
